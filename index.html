@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-slate-50">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D2C Brand's channel and product performance</title>
+    <!-- Tailwind CSS Public CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- ApexCharts Public CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <!-- Tailwind Custom Configuration for Modern Palette -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        enterprise: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="h-full text-slate-800 antialiased">
+
+    <!-- Top Executive Header Line -->
+    <header class="sticky top-0 z-40 w-full border-b border-slate-200 bg-white/80 backdrop-blur-md">
+        <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-3">
+                <div class="flex h-9 w-9 items-center justify-center rounded-lg bg-enterprise-900 text-white font-bold text-lg shadow-sm">D2C</div>
+                <div>
+                    <h1 class="text-base font-bold text-enterprise-900 tracking-tight">D2C Brand's channel and product performance</h1>
+                    <p class="text-xs text-slate-400 font-medium">Enterprise Management Suite</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-2.5 py-1 text-xs font-semibold text-blue-700 ring-1 ring-inset ring-blue-700/10">
+                    <span class="h-1.5 w-1.5 rounded-full bg-blue-600 animate-pulse"></span> Dynamic Data Matrix Loaded
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Strategic Container -->
+    <main class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8 space-y-8">
+        
+        <!-- Interactive Portfolio Filtration Track -->
+        <section class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                <div>
+                    <h2 class="text-xs font-bold tracking-wider text-slate-400 uppercase">Operational Brand Matrix</h2>
+                    <p class="text-xs text-slate-500">Select a brand entity node to dynamically project child-level product performance arrays below.</p>
+                </div>
+                <div class="text-xs font-medium text-slate-400">
+                    Active Layer: <span id="activeBrandLabel" class="font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded-md border border-blue-100">All Brands Combined</span>
+                </div>
+            </div>
+            <div id="brandSelectorsGroup" class="flex flex-wrap gap-2">
+                <!-- Injected via Script Layer -->
+            </div>
+        </section>
+
+        <!-- Business Health KPIs Core Module -->
+        <section class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            
+            <!-- Metric Card 1: Total Revenue -->
+            <div class="relative overflow-hidden rounded-xl bg-white border border-slate-200 p-6 shadow-sm transition-all duration-200 hover:shadow-md">
+                <div class="absolute rounded-lg bg-emerald-50 p-3 text-emerald-600">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg>
+                </div>
+                <div class="ml-16">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Total Revenue</h3>
+                    <p class="text-[11px] leading-tight text-slate-500 mt-0.5">Gross commercial receipts generated from point-of-sale customer fulfillments.</p>
+                    <div class="mt-2 flex items-baseline">
+                        <p id="kpiRevenueField" class="text-2xl font-bold tracking-tight text-slate-950">₹0</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Metric Card 2: Total Units Sold -->
+            <div class="relative overflow-hidden rounded-xl bg-white border border-slate-200 p-6 shadow-sm transition-all duration-200 hover:shadow-md">
+                <div class="absolute rounded-lg bg-indigo-50 p-3 text-indigo-600">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" /></svg>
+                </div>
+                <div class="ml-16">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Total Units Sold</h3>
+                    <p class="text-[11px] leading-tight text-slate-500 mt-0.5">Absolute inventory volume of discrete physical product items processed.</p>
+                    <div class="mt-2 flex items-baseline">
+                        <p id="kpiUnitsField" class="text-2xl font-bold tracking-tight text-slate-950">0</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Metric Card 3: Average Order Value -->
+            <div class="relative overflow-hidden rounded-xl bg-white border border-slate-200 p-6 shadow-sm transition-all duration-200 hover:shadow-md">
+                <div class="absolute rounded-lg bg-amber-50 p-3 text-amber-600">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 14.25l6-6m4.5-3.493V21a1.125 1.125 0 01-1.125 1.125H3.75A1.125 1.125 0 012.625 21V3.75m18 0A1.125 1.125 0 0018 2.625H3.75a1.125 1.125 0 00-1.125 1.125v17.25m18 0v-14.25" /></svg>
+                </div>
+                <div class="ml-16">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Average Order Value (AOV)</h3>
+                    <p class="text-[11px] leading-tight text-slate-500 mt-0.5">Mean checkout cart transaction valuation per single unique order ticket.</p>
+                    <div class="mt-2 flex items-baseline">
+                        <p id="kpiAOVField" class="text-2xl font-bold tracking-tight text-slate-950">₹0</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Metric Card 4: Total Orders -->
+            <div class="relative overflow-hidden rounded-xl bg-white border border-slate-200 p-6 shadow-sm transition-all duration-200 hover:shadow-md">
+                <div class="absolute rounded-lg bg-blue-50 p-3 text-blue-600">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0z" /></svg>
+                </div>
+                <div class="ml-16">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Total Unique Orders</h3>
+                    <p class="text-[11px] leading-tight text-slate-500 mt-0.5">Mathematical summary aggregation of overall successful checkout conversions.</p>
+                    <div class="mt-2 flex items-baseline">
+                        <p id="kpiOrdersField" class="text-2xl font-bold tracking-tight text-slate-950">0</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Diagnostics Section -->
+        <section class="space-y-4">
+            <div>
+                <h3 class="text-base font-bold text-slate-900 tracking-tight">Product Performance Matrix & Lifecycle Positioning</h3>
+                <p class="text-xs text-slate-500">Cross-sku operational intelligence isolating primary velocity trends against direct supply chain status values.</p>
+            </div>
+
+            <div class="grid grid-cols-1 gap-6 lg:grid-cols-3 items-stretch">
+                
+                <!-- Hero Product Spotlight Widget Card -->
+                <div class="rounded-xl border border-slate-950 bg-slate-950 p-6 text-white shadow-md relative overflow-hidden flex flex-col justify-between lg:col-span-1">
+                    <div class="absolute -right-12 -top-12 h-28 w-28 rounded-full bg-slate-800/50 blur-xl"></div>
+                    
+                    <div class="relative z-10">
+                        <div class="flex items-center justify-between">
+                            <span id="heroBrandTag" class="inline-flex items-center rounded-full bg-blue-500/10 px-2.5 py-0.5 text-xs font-semibold text-blue-400 ring-1 ring-inset ring-blue-500/30">
+                                --
+                            </span>
+                            <span class="text-[10px] font-bold text-amber-400 uppercase tracking-wider">Top Velocity Hero</span>
+                        </div>
+
+                        <div class="mt-5">
+                            <h4 id="heroProductName" class="text-2xl font-extrabold tracking-tight text-white">--</h4>
+                            <p id="heroProductDesc" class="text-xs text-slate-400 mt-2 leading-relaxed">--</p>
+                        </div>
+
+                        <!-- Core Features Mini List -->
+                        <div class="mt-6 space-y-2 border-t border-slate-900 pt-4">
+                            <p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">SKU Highlights</p>
+                            <div class="flex items-center gap-2 text-xs text-slate-300">
+                                <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                                <span id="heroFeatureItem1">--</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs text-slate-300">
+                                <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                                <span id="heroFeatureItem2">--</span>
+                            </div>
+                        </div>
+
+                        <!-- Local Sales Performance Frame -->
+                        <div class="mt-5 grid grid-cols-2 gap-3 bg-slate-900/60 p-3 rounded-lg border border-slate-900">
+                            <div>
+                                <p class="text-[9px] uppercase font-bold tracking-wider text-slate-500">Units Dispatched</p>
+                                <p id="heroVolumeField" class="text-sm font-bold text-white">0</p>
+                            </div>
+                            <div>
+                                <p class="text-[9px] uppercase font-bold tracking-wider text-slate-500">Order Frequency</p>
+                                <p id="heroOrdersField" class="text-sm font-bold text-white">0</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Price Positioning Node -->
+                    <div class="mt-8 pt-4 border-t border-slate-900 flex items-center justify-between relative z-10">
+                        <div>
+                            <p class="text-[9px] text-slate-500 uppercase font-bold tracking-wider">Special Execution Price</p>
+                            <div class="flex items-baseline gap-2">
+                                <span id="heroPriceDiscount" class="text-2xl font-extrabold tracking-tight text-white">₹0</span>
+                                <span id="heroPriceBase" class="text-xs text-slate-500 line-through">₹0</span>
+                            </div>
+                        </div>
+                        <span class="inline-flex h-8 items-center px-2.5 rounded bg-white text-slate-950 font-bold text-xs shadow-sm">
+                            Promo Active
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Product Inventory/Sales Table Array -->
+                <div class="rounded-xl border border-slate-200 bg-white shadow-sm lg:col-span-2 overflow-hidden flex flex-col justify-between">
+                    <div class="px-6 py-4 border-b border-slate-100 bg-slate-50/50">
+                        <h4 id="tableDynamicHeader" class="text-sm font-bold text-slate-900">Portfolio SKU Performance Matrix</h4>
+                        <p class="text-xs text-slate-400">Dynamic linear catalog mapping item sales data metrics directly to inventory health states.</p>
+                    </div>
+
+                    <div class="overflow-x-auto grow">
+                        <table class="w-full text-left border-collapse text-sm">
+                            <thead>
+                                <tr class="border-b border-slate-200 bg-slate-50 text-[10px] uppercase tracking-wider font-bold text-slate-500">
+                                    <th class="px-6 py-3">Product Nomenclature</th>
+                                    <th class="px-6 py-3 text-right">Units Shipped</th>
+                                    <th class="px-6 py-3 text-right">Total Orders</th>
+                                    <th class="px-6 py-3 text-center">Supply Chain Risk Profile</th>
+                                </tr>
+                            </thead>
+                            <tbody id="productDataGridBody" class="divide-y divide-slate-100 font-medium text-slate-700">
+                                <!-- Dynamic Generation Array -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Channel Performance Analysis Section -->
+        <section class="space-y-4">
+            <div>
+                <h3 class="text-base font-bold text-slate-900 tracking-tight">Channel Performance & Marketplace Yield Matrix</h3>
+                <p class="text-xs text-slate-500">Attribution analysis isolating cross-channel asset growth vectors and revenue share proportions.</p>
+            </div>
+
+            <!-- Attribution Chart Core Grid Layout -->
+            <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
+                <!-- Share Matrix Card -->
+                <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-900">Revenue Contribution Share</h4>
+                        <p class="text-xs text-slate-400 mb-4">Proportional fiscal allocation across targeted commerce nodes.</p>
+                    </div>
+                    <div id="channelShareDonutChart" class="w-full"></div>
+                </div>
+
+                <!-- Growth Vector Trend Line -->
+                <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm lg:col-span-2">
+                    <div>
+                        <h4 class="text-sm font-bold text-slate-900">Monthly Channel Scaled Trajectory</h4>
+                        <p class="text-xs text-slate-400 mb-4">Sequential performance velocity tracking over immediate reporting arcs.</p>
+                    </div>
+                    <div id="channelGrowthLineChart" class="w-full"></div>
+                </div>
+            </div>
+
+            <!-- Absolute Cross Distribution Column Bars -->
+            <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                <div>
+                    <h4 class="text-sm font-bold text-slate-900">Absolute Yield Metrics Conversion</h4>
+                    <p class="text-xs text-slate-400 mb-4">Direct configuration model mapping gross cash volume generation side-by-side with boxed shipment frequencies.</p>
+                </div>
+                <div id="channelYieldClusteredBarChart"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Global Footer Struct -->
+    <footer class="mx-auto max-w-7xl px-4 pb-12 pt-6 sm:px-6 lg:px-8 border-t border-slate-200 mt-12 text-center text-xs text-slate-400 font-medium">
+        D2C Management Console &bull; High-Fidelity Professional Engine Standalone Node &bull; 2026 Reporting Year
+    </footer>
+
+    <!-- Complex Mock Data & Processing Application Script -->
+    <script>
+        // High fidelity mock data structured cleanly by individual brand entities
+        const masterD2CDataset = {
+            "All Brands Combined": {
+                kpis: { revenue: "₹8,45,60,000", units: "2,98,450", aov: "₹2,833", orders: "2,98,400" },
+                pieShare: [32, 25, 20, 13, 10], // Amazon, App, Website, Instagram, WhatsApp
+                trendSeries: [
+                    { name: 'Amazon Channel Platform', data: [410, 480, 520, 610, 590, 720] },
+                    { name: 'Owned Mobile Application', data: [310, 360, 410, 490, 530, 610] },
+                    { name: 'Core Web Architecture', data: [280, 310, 340, 390, 450, 510] }
+                ],
+                barRevenue: [2705, 2114, 1691, 1099, 845],
+                barUnits: [9550, 7460, 5960, 3870, 2980],
+                hero: {
+                    brand: "Global Master Catalog",
+                    name: "Advanced Vitamin C Serum Matrix",
+                    description: "Top volume driver mapping maximum conversion acceleration metrics across the unified multi-brand portfolio catalog footprint.",
+                    feat1: "65% Average repeat cohort allocation run",
+                    feat2: "Optimized 74% gross processing profit limit",
+                    volume: "38,400",
+                    orders: "34,100",
+                    discount: "₹599",
+                    base: "₹899"
+                },
+                products: [
+                    { name: "Vitamin C Serum", units: "38,400", orders: "34,100", status: "In Stock" },
+                    { name: "Sunscreen SPF50", units: "31,200", orders: "28,400", status: "In Stock" },
+                    { name: "Hydrating Moisturizer Gel", units: "26,900", orders: "24,500", status: "Low Stock" },
+                    { name: "Retinol Therapy Night Cream", units: "19,400", orders: "17,100", status: "Out of Stock" },
+                    { name: "Daily Nourish Face Cream", units: "15,200", orders: "13,900", status: "In Stock" },
+                    { name: "Argan Oil Intense Hair Mask", units: "14,800", orders: "12,600", status: "Low Stock" },
+                    { name: "Keratin Smooth Conditioner", units: "12,100", orders: "10,900", status: "In Stock" },
+                    { name: "Biotin Enriched Shampoo", units: "11,500", orders: "9,800", status: "In Stock" },
+                    { name: "Onion Extracted Hair Oil", units: "8,900", orders: "7,400", status: "Out of Stock" }
+                ]
+            },
+            "Minimalist": {
+                kpis: { revenue: "₹92,40,000", units: "34,100", aov: "₹2,709", orders: "34,100" },
+                pieShare: [45, 15, 22, 10, 8],
+                trendSeries: [
+                    { name: 'Amazon Channel Platform', data: [55, 64, 72, 85, 93, 110] },
+                    { name: 'Owned Mobile Application', data: [22, 28, 33, 40, 46, 55] },
+                    { name: 'Core Web Architecture', data: [31, 35, 39, 44, 51, 58] }
+                ],
+                barRevenue: [415, 138, 203, 92, 73],
+                barUnits: [15345, 5115, 7502, 3410, 2728],
+                hero: {
+                    brand: "Minimalist",
+                    name: "Vitamin C Serum 10%",
+                    description: "Clinical grade ultra-stable formulation designed for extreme molecular delivery velocity.",
+                    feat1: "Fragrance-free clean diagnostic score",
+                    feat2: "71% baseline production profit limit",
+                    volume: "6,200",
+                    orders: "5,800",
+                    discount: "₹699",
+                    base: "₹799"
+                },
+                products: [
+                    { name: "Vitamin C Serum 10%", units: "6,200", orders: "5,800", status: "In Stock" },
+                    { name: "Sunscreen SPF50 Fluid", units: "5,100", orders: "4,600", status: "In Stock" },
+                    { name: "Marula Oil Moisturizer", units: "4,300", orders: "3,900", status: "Low Stock" },
+                    { name: "Granactive Retinol Night Cream", units: "3,800", orders: "3,200", status: "In Stock" }
+                ]
+            },
+            "Faces Canada": {
+                kpis: { revenue: "₹62,80,000", units: "21,500", aov: "₹2,920", orders: "21,500" },
+                pieShare: [38, 22, 18, 14, 8],
+                trendSeries: [
+                    { name: 'Amazon Channel Platform', data: [38, 44, 49, 53, 59, 68] },
+                    { name: 'Owned Mobile Application', data: [21, 25, 29, 34, 38, 45] },
+                    { name: 'Core Web Architecture', data: [19, 22, 25, 28, 32, 37] }
+                ],
+                barRevenue: [238, 138, 113, 87, 50],
+                barUnits: [8170, 4730, 3870, 3010, 1720],
+                hero: {
+                    brand: "Faces Canada",
+                    name: "Ultime Pro HD Face Cream Base",
+                    description: "High definition professional preparation cream optimized for extended structural wear cycles.",
+                    feat1: "Elevated consumer attachment profile ratio",
+                    feat2: "Premium formulation classification index",
+                    volume: "4,100",
+                    orders: "3,750",
+                    discount: "₹675",
+                    base: "₹899"
+                },
+                products: [
+                    { name: "Ultime Pro HD Face Cream Base", units: "4,100", orders: "3,750", status: "In Stock" },
+                    { name: "Urban Balance Night Cream", units: "3,200", orders: "2,900", status: "In Stock" },
+                    { name: "Tinted Moisturizer SPF30", units: "2,400", orders: "2,100", status: "Low Stock" }
+                ]
+            },
+            "OZiva": {
+                kpis: { revenue: "₹71,50,000", units: "22,800", aov: "₹3,135", orders: "22,800" },
+                pieShare: [25, 38, 22, 10, 5],
+                trendSeries: [
+                    { name: 'Amazon Channel Platform', data: [28, 33, 37, 42, 46, 52] },
+                    { name: 'Owned Mobile Application', data: [41, 49, 56, 64, 71, 85] },
+                    { name: 'Core Web Architecture', data: [24, 28, 31, 36, 40, 47] }
+                ],
+                barRevenue: [178, 271, 157, 71, 35],
+                barUnits: [5700, 8664, 5016, 2280, 1140],
+                hero: {
+                    brand: "OZiva",
+                    name: "Plant Based Collagen Builder",
+                    description: "Organic botanical nutrition skin synthesis complex engineered for deep internal repair tracking.",
+                    feat1: "100% Verified clean label certification",
+                    feat2: "High customer lifetime evaluation index",
+                    volume: "4,900",
+                    orders: "4,400",
+                    discount: "₹845",
+                    base: "₹999"
+                },
+                products: [
+                    { name: "Plant Based Collagen Builder", units: "4,900", orders: "4,400", status: "In Stock" },
+                    { name: "Protein Glow Face Mask", units: "3,800", orders: "3,500", status: "In Stock" },
+                    { name: "Bio-Retinol Renewal Night Cream", units: "2,900", orders: "2,600", status: "Low Stock" }
+                ]
+            },
+            "Fast&Up": {
+                kpis: { revenue: "₹51,20,000", units: "20,400", aov: "₹2,509", orders: "20,400" },
+                pieShare: [36, 24, 20, 12, 8],
+                trendSeries: [
+                    { name: 'Amazon Channel Platform', data: [32, 38, 42, 47, 51, 59] },
+                    { name: 'Owned Mobile Application', data: [22, 26, 30, 35, 39, 46] },
+                    { name: 'Core Web Architecture', data: [18, 22, 25, 29, 33, 39] }
+                ],
+                barRevenue: [184, 122, 102, 61, 40],
+                barUnits: [7344, 4896, 4080, 2448, 1632],
+                hero: {
+                    brand: "Fast&Up",
+                    name: "Charge Vitamin C Fluid Effervescent",
+                    description: "Active lifestyle nutritional format designed for immediate cellular skin system defense.",
+                    feat1: "Fast dissolving high absorption model",
+                    feat2: "Top transactional scaling speed tier",
+                    volume: "5,300",
+                    orders: "4,950",
+                    discount: "₹340",
+                    base: "₹390"
+                },
+                products: [
+                    { name: "Charge Vitamin C Fluid Effervescent", units: "5,300", orders: "4,950", status: "In Stock" },
+                    { name: "Active Skin Shield Sunscreen", units: "3,900", orders: "3,600", status: "In Stock" },
+                    { name: "Daily Hydration Moisturizer Gel", units: "2,800", orders: "2,500", status: "Low Stock" }
+                ]
+            },
+            "Dot & Key": {
+                kpis: { revenue: "₹76,90,000", units: "27,200", aov: "₹2,827", orders: "27,200" },
+                pieShare: [30, 30, 18, 14, 8],
+                trendSeries: [
+                    { name: 'Amazon Channel Platform', data: [45, 51, 56, 62, 69, 78] },
+                    { name: 'Owned Mobile Application', data: [42, 48, 54, 60, 67, 75] },
+                    { name: 'Core Web Architecture', data: [26, 30, 34, 39, 44, 51] }
+                ],
+                barRevenue: [230, 230, 138, 107, 61],
+                barUnits: [8160, 8160, 4896, 3808, 2176],
+                hero: {
+                    brand: "Dot & Key",
+                    name: "Water Cica Sunscreen SPF50",
+                    description: "Ultra lightweight aquatic defense matrix designed explicitly for intense tropical microclimates.",
+                    feat1: "Zero trace white-cast evaluation matrix",
+                    feat2: "Strong conversational commerce scaling run",
+                    volume: "5,800",
+                    orders: "5,200",
+                    discount: "₹395",
+                    base: "₹495"
+                },
+                products: [
+                    { name: "Water Cica Sunscreen SPF50", units: "5,800", orders: "5,200", status: "In Stock" },
+                    { name: "Vitamin C Glow Moisturizer", units: "4,600", orders: "4,100", status: "In Stock" },
+                    { name: "Barrier Repair Face Cream", units: "3,200", orders: "2,900", status: "In Stock" }
+                ]
+            },
+            "Tresemme": {
+                kpis: { revenue: "₹81,20,000", units: "33,400", aov: "₹2,431", orders: "33,400" },
+                pieShare: [48, 12, 18, 14, 8],
+                trendSeries: [
+                    { name: 'Amazon Channel Platform', data: [68, 75, 84, 93, 101, 118] },
+                    { name: 'Owned Mobile Application', data: [18, 22, 25, 29, 34, 40] },
+                    { name: 'Core Web Architecture', data: [25, 29, 33, 37, 41, 48] }
+                ],
+                barRevenue: [389, 97, 146, 113, 64],
+                barUnits: [16032, 4008, 6012, 4676, 2672],
+                hero: {
+                    brand: "Tresemme",
+                    name: "Keratin Smooth Restructuring Mask",
+                    description: "Professional level structural fiber repair system tracking elevated salon line metrics.",
+                    feat1: "Max marketplace user generation pull",
+                    feat2: "High bulk logistic operational yield",
+                    volume: "8,900",
+                    orders: "8,100",
+                    discount: "₹520",
+                    base: "₹650"
+                },
+                products: [
+                    { name: "Keratin Smooth Restructuring Mask", units: "8,900", orders: "8,100", status: "In Stock" },
+                    { name: "Keratin Smooth Conditioner", units: "7,400", orders: "6,800", status: "In Stock" },
+                    { name: "Gloss Salon Control Shampoo", units: "6,100", orders: "5,400", status: "Low Stock" }
+                ]
+            },
+            "The Whole Truth": {
+                kpis: { revenue: "₹48,50,000", units: "15,800", aov: "₹3,069", orders: "15,800" },
+                pieShare: [22, 44, 16, 11, 7],
+                trendSeries: [
+                    { name: 'Amazon Channel Platform', data: [18, 22, 25, 28, 32, 37] },
+                    { name: 'Owned Mobile Application', data: [38, 45, 52, 59, 68, 76] },
+                    { name: 'Core Web Architecture', data: [14, 17, 20, 23, 26, 31] }
+                ],
+                barRevenue: [106, 213, 77, 53, 33],
+                barUnits: [3476, 6952, 2528, 1738, 1106],
+                hero: {
+                    brand: "The Whole Truth",
+                    name: "Clean Cocoa Hair & Scalp Oil",
+                    description: "Strictly minimalist ingredient profile extending clean label philosophy directly to skin application.",
+                    feat1: "100% Ingredient declaration visibility",
+                    feat2: "Strong customer base subscription yield",
+                    volume: "3,400",
+                    orders: "3,100",
+                    discount: "₹450",
+                    base: "₹450"
+                },
+                products: [
+                    { name: "Clean Cocoa Hair & Scalp Oil", units: "3,400", orders: "3,100", status: "In Stock" },
+                    { name: "Pure Unflavored Scalp Serum", units: "2,600", orders: "2,350", status: "In Stock" }
+                ]
+            },
+            "Plum": {
+                kpis: { revenue: "₹69,40,000", units: "26,500", aov: "₹2,618", orders: "26,500" },
+                pieShare: [32, 28, 16, 14, 10],
+                trendSeries: [
+                    { name: 'Amazon Channel Platform', data: [42, 48, 52, 59, 64, 73] },
+                    { name: 'Owned Mobile Application', data: [38, 44, 49, 54, 60, 68] },
+                    { name: 'Core Web Architecture', data: [22, 25, 29, 32, 36, 42] }
+                ],
+                barRevenue: [222, 194, 111, 97, 69],
+                barUnits: [8480, 7420, 4240, 3710, 2650],
+                hero: {
+                    brand: "Plum",
+                    name: "Green Tea Pore Cleansing Moisturizer",
+                    description: "100% vegan matte finish fluid leading product metrics inside organic skin markets.",
+                    feat1: "100% Cruelty-free certified status",
+                    feat2: "High density marketplace organic search draw",
+                    volume: "5,100",
+                    orders: "4,600",
+                    discount: "₹425",
+                    base: "₹570"
+                },
+                products: [
+                    { name: "Green Tea Pore Cleansing Moisturizer", units: "5,100", orders: "4,600", status: "In Stock" },
+                    { name: "Chamomile Matte Sunscreen", units: "4,200", orders: "3,900", status: "In Stock" },
+                    { name: "Olive Macadamia Hair Mask", units: "3,100", orders: "2,850", status: "Low Stock" }
+                ]
+            },
+            "Wellbeing Nutrition": {
+                kpis: { revenue: "₹63,40,000", units: "19,200", aov: "₹3,302", orders: "19,200" },
+                pieShare: [26, 34, 22, 12, 6],
+                trendSeries: [
+                    { name: 'Amazon Channel Platform', data: [31, 35, 40, 45, 51, 57] },
+                    { name: 'Owned Mobile Application', data: [38, 44, 52, 59, 66, 75] },
+                    { name: 'Core Web Architecture', data: [25, 29, 33, 37, 42, 48] }
+                ],
+                barRevenue: [164, 215, 139, 76, 38],
+                barUnits: [4992, 6528, 4224, 2304, 1152],
+                hero: {
+                    brand: "Wellbeing Nutrition",
+                    name: "Marine Collagen Repair Elixir",
+                    description: "High potency systematic optimization line mapping highest absolute product basket value sizes.",
+                    feat1: "Premium pricing architecture validation",
+                    feat2: "Top tracking loyalty acquisition velocity",
+                    volume: "3,600",
+                    orders: "3,250",
+                    discount: "₹1,250",
+                    base: "₹1,500"
+                },
+                products: [
+                    { name: "Marine Collagen Repair Elixir", units: "3,600", orders: "3,250", status: "In Stock" },
+                    { name: "Radiant Skin Glow Mask Pack", units: "2,900", orders: "2,700", status: "In Stock" }
+                ]
+            },
+            "Brillare": {
+                kpis: { revenue: "₹43,20,000", units: "14,500", aov: "₹2,979", orders: "14,500" },
+                pieShare: [35, 25, 20, 12, 8],
+                trendSeries: [
+                    { name: 'Amazon Channel Platform', data: [26, 31, 35, 39, 44, 51] },
+                    { name: 'Owned Mobile Application', data: [19, 22, 26, 30, 34, 40] },
+                    { name: 'Core Web Architecture', data: [15, 18, 21, 24, 28, 33] }
+                ],
+                barRevenue: [151, 108, 86, 51, 34],
+                barUnits: [5075, 3625, 2900, 1740, 1160],
+                hero: {
+                    brand: "Brillare",
+                    name: "Real Onion Hair Fall Control Oil",
+                    description: "Zero dilution, 100% raw oil matrix designed for target deep root health activation profiles.",
+                    feat1: "Pure uncompromised baseline rating",
+                    feat2: "High volume localized vendor repeat use",
+                    volume: "3,100",
+                    orders: "2,900",
+                    discount: "₹540",
+                    base: "₹599"
+                },
+                products: [
+                    { name: "Real Onion Hair Fall Control Oil", units: "3,100", orders: "2,900", status: "In Stock" },
+                    { name: "Heavy Repair Professional Shampoo", units: "2,400", orders: "2,150", status: "In Stock" }
+                ]
+            },
+            "Arata": {
+                kpis: { revenue: "₹39,80,000", units: "12,900", aov: "₹3,085", orders: "12,900" },
+                pieShare: [32, 30, 18, 12, 8],
+                trendSeries: [
+                    { name: 'Amazon Channel Platform', data: [22, 26, 30, 34, 39, 44] },
+                    { name: 'Owned Mobile Application', data: [21, 25, 29, 33, 38, 43] },
+                    { name: 'Core Web Architecture', data: [12, 15, 18, 21, 24, 29] }
+                ],
+                barRevenue: [127, 119, 71, 47, 31],
+                barUnits: [4128, 3870, 2322, 1548, 1032],
+                hero: {
+                    brand: "Arata",
+                    name: "Advanced Curly Hair Cream Gel",
+                    description: "Specialist plant chemical style line mapping high trend pull metrics across target younger user sets.",
+                    feat1: "Niche sub-category processing leadership",
+                    feat2: "Strong community visual interaction loop",
+                    volume: "2,900",
+                    orders: "2,650",
+                    discount: "₹499",
+                    base: "₹599"
+                },
+                products: [
+                    { name: "Advanced Curly Hair Cream Gel", units: "2,900", orders: "2,650", status: "In Stock" },
+                    { name: "Sea Turmeric Hydrating Shampoo", units: "2,100", orders: "1,950", status: "Low Stock" }
+                ]
+            }
+        };
+
+        let activeBrandKey = "All Brands Combined";
+        let donChartInstance, lineChartInstance, barChartInstance;
+
+        // Render Navigation Elements dynamically
+        function initBrandSelectorPills() {
+            const container = document.getElementById("brandSelectorsGroup");
+            container.innerHTML = "";
+
+            Object.keys(masterD2CDataset).forEach(brandKey => {
+                const isActive = brandKey === activeBrandKey;
+                const element = document.createElement("button");
+                element.className = `inline-flex items-center rounded-md px-3 py-1.5 text-xs font-semibold tracking-tight cursor-pointer transition-all border ${
+                    isActive 
+                    ? "bg-slate-950 text-white border-slate-950 shadow-sm scale-102" 
+                    : "bg-white text-slate-600 border-slate-200 hover:bg-slate-50 hover:text-slate-900"
+                }`;
+                element.textContent = brandKey;
+                element.onclick = () => {
+                    activeBrandKey = brandKey;
+                    processDashboardRefresh();
+                };
+                container.appendChild(element);
+            });
+
+            document.getElementById("activeBrandLabel").textContent = activeBrandKey;
+            document.getElementById("tableDynamicHeader").textContent = `${activeBrandKey} Portfolio SKU Performance Matrix`;
+        }
+
+        // Framework Refresh Sequence
+        function processDashboardRefresh() {
+            initBrandSelectorPills();
+            const slice = masterD2CDataset[activeBrandKey];
+
+            // Primary KPIs Injection
+            document.getElementById("kpiRevenueField").textContent = slice.kpis.revenue;
+            document.getElementById("kpiUnitsField").textContent = slice.kpis.units;
+            document.getElementById("kpiAOVField").textContent = slice.kpis.aov;
+            document.getElementById("kpiOrdersField").textContent = slice.kpis.orders;
+
+            // Hero Highlight Spot Inject
+            document.getElementById("heroBrandTag").textContent = slice.hero.brand;
+            document.getElementById("heroProductName").textContent = slice.hero.name;
+            document.getElementById("heroProductDesc").textContent = slice.hero.description;
+            document.getElementById("heroFeatureItem1").textContent = slice.hero.feat1;
+            document.getElementById("heroFeatureItem2").textContent = slice.hero.feat2;
+            document.getElementById("heroVolumeField").textContent = Number(slice.hero.volume).toLocaleString();
+            document.getElementById("heroOrdersField").textContent = Number(slice.hero.orders).toLocaleString();
+            document.getElementById("heroPriceDiscount").textContent = slice.hero.discount;
+            document.getElementById("heroPriceBase").textContent = slice.hero.base;
+
+            // Product Lifecycle Table Mapping
+            const containerBody = document.getElementById("productDataGridBody");
+            containerBody.innerHTML = "";
+            
+            slice.products.forEach(item => {
+                let statusBadgeMarkup = "";
+                if (item.status === "In Stock") {
+                    statusBadgeMarkup = `<span class="inline-flex items-center rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-medium text-emerald-700 ring-1 ring-inset ring-emerald-600/20">In Stock</span>`;
+                } else if (item.status === "Low Stock") {
+                    statusBadgeMarkup = `<span class="inline-flex items-center rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-700 ring-1 ring-inset ring-amber-600/20">Low Stock</span>`;
+                } else {
+                    statusBadgeMarkup = `<span class="inline-flex items-center rounded-full bg-rose-50 px-2 py-0.5 text-xs font-medium text-rose-700 ring-1 ring-inset ring-rose-600/20">Out of Stock</span>`;
+                }
+
+                const trElement = document.createElement("tr");
+                trElement.className = "hover:bg-slate-50/70 transition-colors";
+                trElement.innerHTML = `
+                    <td class="px-6 py-3.5 text-slate-950 font-semibold">${item.name}</td>
+                    <td class="px-6 py-3.5 text-right font-mono text-xs">${Number(item.units.replace(/,/g, '')).toLocaleString()}</td>
+                    <td class="px-6 py-3.5 text-right font-mono text-xs text-slate-500">${Number(item.orders.replace(/,/g, '')).toLocaleString()}</td>
+                    <td class="px-6 py-3.5 text-center">${statusBadgeMarkup}</td>
+                `;
+                containerBody.appendChild(trElement);
+            });
+
+            // Trigger Chart Synchronization
+            if (donChartInstance && lineChartInstance && barChartInstance) {
+                donChartInstance.updateSeries(slice.pieShare);
+                lineChartInstance.updateSeries(slice.trendSeries);
+                barChartInstance.updateSeries([
+                    { name: 'Gross Revenue Stream (Indexed)', data: slice.barRevenue },
+                    { name: 'Absolute Product Units Dispatched', data: slice.barUnits }
+                ]);
+            }
+        }
+
+        // Operational Graph Initialization On Load
+        document.addEventListener("DOMContentLoaded", function () {
+            const fontDef = 'Inter, sans-serif';
+
+            // Chart A: Contribution Donut Struct
+            const optionsDonut = {
+                series: masterD2CDataset["All Brands Combined"].pieShare,
+                chart: { type: 'donut', height: 320, fontFamily: fontDef },
+                labels: ['Amazon Fulfillment', 'Owned Mobile App', 'Brand Direct Website', 'Instagram DM Commerce', 'WhatsApp API Node'],
+                colors: ['#0f172a', '#6366f1', '#2563eb', '#ec4899', '#22c55e'],
+                stroke: { width: 2, colors: ['#ffffff'] },
+                legend: { position: 'bottom', fontSize: '12px', fontWeight: 500, labels: { colors: '#475569' } },
+                dataLabels: { enabled: true, formatter: function (val) { return parseInt(val) + "%" } },
+                plotOptions: { pie: { donut: { size: '70%' } } },
+                tooltip: { y: { formatter: function (v) { return v + "% Contribution Level" } } }
+            };
+
+            // Chart B: Scaling Line Graph
+            const optionsLine = {
+                series: masterD2CDataset["All Brands Combined"].trendSeries,
+                chart: { type: 'line', height: 320, fontFamily: fontDef, toolbar: { show: false }, zoom: { enabled: false } },
+                colors: ['#0f172a', '#6366f1', '#2563eb'],
+                stroke: { width: 3, curve: 'smooth' },
+                grid: { borderColor: '#f1f5f9' },
+                xaxis: {
+                    categories: ['Jan 2026', 'Feb 2026', 'Mar 2026', 'Apr 2026', 'May 2026', 'Jun 2026'],
+                    labels: { style: { colors: '#94a3b8', fontSize: '11px' } }
+                },
+                yaxis: { labels: { style: { colors: '#94a3b8', fontSize: '11px' } } },
+                legend: { position: 'top', horizontalAlign: 'right', fontSize: '12px', fontWeight: 500 },
+                markers: { size: 4, hover: { size: 6 } },
+                tooltip: { theme: 'light', y: { formatter: function(v) { return "₹" + v + ",000 Benchmark Yield" } } }
+            };
+
+            // Chart C: Clustered Comparative Bar Graph
+            const optionsBar = {
+                series: [
+                    { name: 'Gross Revenue Stream (Indexed)', data: masterD2CDataset["All Brands Combined"].barRevenue },
+                    { name: 'Absolute Product Units Dispatched', data: masterD2CDataset["All Brands Combined"].barUnits }
+                ],
+                chart: { type: 'bar', height: 340, fontFamily: fontDef, toolbar: { show: false } },
+                colors: ['#0f172a', '#2563eb'],
+                plotOptions: { bar: { horizontal: false, columnWidth: '45%', borderRadius: 4 } },
+                dataLabels: { enabled: false },
+                xaxis: {
+                    categories: ['Amazon Portal', 'Mobile App', 'Direct Website', 'Instagram DM Shop', 'WhatsApp Node'],
+                    labels: { style: { colors: '#475569', fontSize: '11px', fontWeight: 500 } }
+                },
+                yaxis: { labels: { style: { colors: '#94a3b8', fontSize: '11px' } } },
+                grid: { borderColor: '#f1f5f9' },
+                legend: { position: 'top', horizontalAlign: 'right', fontSize: '12px', fontWeight: 500 },
+                tooltip: {
+                    y: {
+                        formatter: function (val, opt) {
+                            return opt.seriesIndex === 0 ? "₹" + val.toLocaleString() + ",000 Core Revenue" : val.toLocaleString() + " Units Shipped";
+                        }
+                    }
+                }
+            };
+
+            // Instantiate Global Core Objects
+            donChartInstance = new ApexCharts(document.querySelector("#channelShareDonutChart"), optionsDonut);
+            lineChartInstance = new ApexCharts(document.querySelector("#channelGrowthLineChart"), optionsLine);
+            barChartInstance = new ApexCharts(document.querySelector("#channelYieldClusteredBarChart"), optionsBar);
+
+            donChartInstance.render();
+            lineChartInstance.render();
+            barChartInstance.render();
+
+            // Run initial population frame
+            processDashboardRefresh();
+        });
+    </script>
+</body>
+</html>
